@@ -1,4 +1,4 @@
-<p  style="text-align: center;" > Send Email Microservice with Java Spring Boot </p>
+# Send Email Microservice with Java Spring Boot
 
 # About it
 
