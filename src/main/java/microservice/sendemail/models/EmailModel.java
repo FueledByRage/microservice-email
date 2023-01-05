@@ -1,4 +1,5 @@
 package microservice.sendemail.models;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -15,14 +16,14 @@ import microservice.sendemail.enums.StatusEmail;
 @Data
 @Entity
 @Table(name = "Email")
-public class EmailModel {
+public class EmailModel implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID ID;
     private String emailOwner;
-    private String from;
-    private String to;
+    private String emailFrom;
+    private String emailTo;
     private String subject;
     @Column(columnDefinition = "TEXT")
     private String text;

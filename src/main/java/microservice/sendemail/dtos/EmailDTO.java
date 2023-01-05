@@ -11,10 +11,10 @@ public class EmailDTO {
     private String emailOwner;
     @NotBlank
     @Email
-    private String from;
+    private String emailFrom;
     @NotBlank
     @Email
-    private String to;
+    private String emailTo;
     @NotBlank
     private String subject;
     @NotBlank
