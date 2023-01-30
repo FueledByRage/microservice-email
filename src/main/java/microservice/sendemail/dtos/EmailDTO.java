@@ -11,9 +11,6 @@ public class EmailDTO {
     private String emailOwner;
     @NotBlank
     @Email
-    private String emailFrom;
-    @NotBlank
-    @Email
     private String emailTo;
     @NotBlank
     private String subject;

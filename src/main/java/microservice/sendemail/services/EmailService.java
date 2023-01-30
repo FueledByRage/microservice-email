@@ -24,15 +24,18 @@ public class EmailService {
 		emailModel.setSendDate(LocalDateTime.now());
         try {
             SimpleMailMessage message = new SimpleMailMessage();
-            message.setFrom(emailModel.getEmailFrom());
-            message.setTo(emailModel.getEmailFrom());
+            message.setFrom("${spring.rabbitmq.username}");
+            message.setTo(emailModel.getEmailTo());
             message.setSubject(emailModel.getSubject());
             message.setText(emailModel.getText());
             emailSender.send(message);
+
             emailModel.setStatus(StatusEmail.SENT);
         } catch (Exception e) {
+            System.out.println(e);
             emailModel.setStatus(StatusEmail.ERROR);
         } 
+        System.out.println(emailModel);
         return emailRepository.save(emailModel);
 	}
 }

@@ -22,7 +22,6 @@ public class RabbitMQEmailConsumer {
         BeanUtils.copyProperties(emailDto, emailModel);
 
         emailService.sendEmail(emailModel);
-        System.out.println(emailModel);
     }
     
 }
